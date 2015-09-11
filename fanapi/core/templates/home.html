@@ -1,0 +1,19 @@
+<head>
+    <style type="text/css">
+        * { font-family: monospace; }
+        .tile {width:10px; height:10px; }
+        .Grass { background-color: #538C42; }
+        .Rock { background-color: #CCCCCC; }
+        .Field { background-color: #674C48; }
+        .River { background-color: #63B2FF; }
+    </style>
+</head>
+<table cellspacing="0" cellpadding="0">
+{% for y in map.map %}
+    <tr>
+    {% for x in y %}
+        <td class="tile {{x.get_material_display}}"></td>
+    {% endfor %}
+    </tr>
+{% endfor %}
+</table>

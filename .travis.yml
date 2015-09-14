@@ -4,4 +4,6 @@ python:
 install:
   - "pip install -r fanapi/requirements"
 script:
+  - "python fanapi/manage.py syncdb"
+
   - "python fanapi/manage.py test"

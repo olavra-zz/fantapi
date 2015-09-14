@@ -4,7 +4,9 @@ import random
 
 
 class Map(models.Model):
+    """
 
+    """
     name = models.CharField(max_length="100")
     map = []
     width = models.IntegerField()
@@ -23,6 +25,7 @@ class Map(models.Model):
                 self.map[ypos][xpos] = tile
 
         self.generate_river(0, 0)
+        return True
 
     def generate_river(self, x, y):
 
@@ -31,8 +34,7 @@ class Map(models.Model):
             self.map[y][x].material = 3
             y = y + random.randint(0, 1)
             x = x + random.randint(0, 1)
-
-
+        return True
 
 
     def display(self):
@@ -41,8 +43,11 @@ class Map(models.Model):
                 print self.map[y][x].display(),
             print ""
 
-class Terrain(models.Model):
 
+class Terrain(models.Model):
+    """
+
+    """
     TERRAIN_TYPES = (
         (0, 'Field'),
         (1, 'Grass'),
